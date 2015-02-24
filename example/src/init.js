@@ -11,6 +11,10 @@
 		render(App.content);
 	};
 
+	var closeInline = function () {
+		App.content.empty();
+	};
+
 	var render = function (region) {
 		var details = new ItemDetails();
 		region.show(details);
@@ -20,7 +24,8 @@
 		template: '#menu-tmpl',
 		triggers: {
 			'click a[data-role="open-modal"]': 'item:modal:click',
-			'click a[data-role="open-inline"]': 'item:inline:click'
+			'click a[data-role="open-inline"]': 'item:inline:click',
+			'click a[data-role="close-inline"]': 'item:inline:close:click'
 		}
 	});
 
@@ -38,6 +43,7 @@
 	var menu = new Menu();
 	menu.on('item:modal:click', openModal);
 	menu.on('item:inline:click', openInline);
+	menu.on('item:inline:close:click', closeInline);
 
 	App.menu.show(menu);
 }());
