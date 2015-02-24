@@ -1,0 +1,35 @@
+{
+  "name": "lmn.marionette.modal",
+  "version": "0.0.0",
+  "authors": [
+    "Riccardo Coppola <ricca509@gmail.com>"
+  ],
+  "description": "A modal region implementation",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "modal",
+    "dialog"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery-modal": "~0.5.2",
+    "backbone": "~1.1.2",
+    "marionette": "~2.4.0",
+    "underscore": "~1.8.2"
+  },
+  "resolutions": {
+    "underscore": "~1.8.2"
+  }
+}
