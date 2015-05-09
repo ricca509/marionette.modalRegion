@@ -24,9 +24,10 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-modal": "~0.5.2",    
+    "jquery-modal": "~0.5.2",
     "marionette": "~2.4.0",
-    "underscore": "~1.8.2"
+    "underscore": "~1.8.2",
+    "requirejs": "~2.1.17"
   },
   "resolutions": {
     "underscore": "~1.8.2"

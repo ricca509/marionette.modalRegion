@@ -1,11 +1,13 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['marionette', 'underscore'], factory);
+        define(['marionette', 'underscore', 'jquery', 'jquery.modal'], factory);
     } else if (typeof exports === 'object') {
         var Marionette = require('marionette');
         var _ = require('underscore');
+        var $ = require('jquery');
+        require('jquery.modal');
 
-        module.exports = factory(Marionette, _);
+        module.exports = factory(Marionette, _, $);
     } else {
         // Browser globals (root is window)
         factory(root.Marionette, root._);
@@ -19,7 +21,6 @@
             var options = this.getDefaultOptions(_.result(view, 'modal'));
 
             view.$el.modal(options);
-
             view.$el.on($.modal.CLOSE, _.bind(this.onCloseDialog, this));
         },
 
