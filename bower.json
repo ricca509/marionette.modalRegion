@@ -24,8 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery-modal": "~0.5.2",
-    "backbone": "~1.1.2",
+    "jquery-modal": "~0.5.2",    
     "marionette": "~2.4.0",
     "underscore": "~1.8.2"
   },

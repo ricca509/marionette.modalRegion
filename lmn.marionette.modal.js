@@ -1,51 +1,63 @@
-'use strict';
+(function (root, factory) {
+	if (typeof define === 'function' && define.amd) {
+        define(['marionette', 'underscore'], factory);
+    } else if (typeof exports === 'object') {
+		var Marionette = require('marionette');
+		var _ = require('underscore');
 
-Marionette.Region.Modal = Marionette.Region.extend({
-	onShow: function (view) {
-		this.bindInputEvents(view);
-		var options = this.getDefaultOptions(_.result(view, 'modal'));
+        module.exports = factory(Marionette, _);
+    } else {
+        // Browser globals (root is window)
+        factory(root.Marionette, root._);
+    }
+}(this, function (Marionette, _) {
+	'use strict';
 
-		view.$el.modal(options);
+	Marionette.Region.Modal = Marionette.Region.extend({
+		onShow: function (view) {
+			this.bindInputEvents(view);
+			var options = this.getDefaultOptions(_.result(view, 'modal'));
 
-		view.$el.on($.modal.CLOSE, _.bind(function () {
-			this.onCloseDialog();
-		}, this));
-	},
+			view.$el.modal(options);
 
-	/**
-	 * Returns the configuration object for the modal
-	 */
-	getDefaultOptions: function (options) {
-		options = options || {};
+			view.$el.on($.modal.CLOSE, _.bind(this.onCloseDialog, this));
+		},
 
-		var defaults = {
-			modalClass: 'lmn-modal'
-		};
+		/**
+		 * Returns the configuration object for the modal
+		 */
+		getDefaultOptions: function (options) {
+			options = options || {};
 
-		return _.defaults(options, {
-			modalClass: options.className
-		}, defaults);
-	},
+			var defaults = {
+				modalClass: 'marionette-modal'
+			};
 
-	/**
-	 * Cleanup after dialog is closed
-	 */
-	onCloseDialog: function () {
-		this.currentView.$el.off($.modal.CLOSE);
-		this.empty();
-	},
+			return _.defaults(options, {
+				modalClass: options.className
+			}, defaults);
+		},
 
-	/**
-	 * Forces the dialog to close and cleanup to happen
-	 */
-	forceClose: function () {
-		$.modal.close();
-	},
+		/**
+		 * Cleanup after dialog is closed
+		 */
+		onCloseDialog: function () {
+			this.currentView.$el.off($.modal.CLOSE);
+			this.empty();
+		},
 
-	/**
-	 * Binds to input events that can force the dialog to behave in a permitted way
-	 */
-	bindInputEvents: function (view) {
-		this.listenTo(view, 'dialog:close', _.bind(this.forceClose, this));
-	}
-});
+		/**
+		 * Forces the dialog to close and cleanup to happen
+		 */
+		forceClose: function () {
+			$.modal.close();
+		},
+
+		/**
+		 * Binds to input events that can force the dialog to behave in a permitted way
+		 */
+		bindInputEvents: function (view) {
+			this.listenTo(view, 'dialog:close', _.bind(this.forceClose, this));
+		}
+	});
+}));

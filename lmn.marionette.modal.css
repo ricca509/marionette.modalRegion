@@ -1,4 +1,4 @@
-.lmn-modal {
+.marionette-modal {
 	display: none;
 	width: auto;
 	background: #fff;
@@ -14,7 +14,7 @@
 	-ms-box-shadow: 0 0 10px #000;
 	box-shadow: 0 0 10px #000;
 }
-.lmn-modal a.close-modal {
+.marionette-modal a.close-modal {
 	position: absolute;
 	top: -12.5px;
 	right: -12.5px;
