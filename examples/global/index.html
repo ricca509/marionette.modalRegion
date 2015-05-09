@@ -12,11 +12,13 @@
 </head>
 
 <body>
-
+    <!-- App regions -->
     <div data-region="menu" class="container"></div>
     <div data-region="content" class="container"></div>
     <div data-region="modal"></div>
+    <!-- !App regions -->
 
+    <!-- Templates -->
     <script type="text/template" id="item-details-tmpl">
         <form>
             <div class="form-group">
@@ -43,8 +45,7 @@
     <script type="text/template" id="menu-tmpl">
         <ul class="list-inline">
             <li>
-                <a href="#" class="btn btn-default" data-role="open-modal">Render as modal</a>
-                <br>
+                <a href="#" class="btn btn-default" data-role="open-modal">Render as modal</a><br>
             </li>
             <li>
                 <a href="#" class="btn btn-default" data-role="open-inline">Render as content</a>
@@ -54,6 +55,7 @@
             </li>
         </ul>
     </script>
+    <!-- !Templates -->
 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
