@@ -3,7 +3,7 @@ require.config({
         'backbone': '../../../bower_components/backbone/backbone',
         'underscore': '../../../bower_components/underscore/underscore',
         'jquery': '../../../bower_components/jquery/dist/jquery',
-        'jquery.modal': '../../../jquery.modal',
+        'jquery.modal': '../../../bower_components/jquery-modal/jquery.modal',
         'marionette': '../../../bower_components/marionette/lib/backbone.marionette',
         'marionette.modal': '../../../marionette.modal'
     },
