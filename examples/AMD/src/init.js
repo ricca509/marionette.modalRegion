@@ -5,7 +5,7 @@ require.config({
         'jquery': '../../../bower_components/jquery/dist/jquery',
         'jquery.modal': '../../../jquery.modal',
         'marionette': '../../../bower_components/marionette/lib/backbone.marionette',
-        'marionette.modal': '../../../lmn.marionette.modal'
+        'marionette.modal': '../../../marionette.modal'
     },
     shim: {
         'jquery.modal': {
