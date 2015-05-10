@@ -1,6 +1,11 @@
 # marionette.modalRegion
-
 A Marionette region that gives your views a modal behavior.
+
+## Demo
+Want to see it working?
+
+- [Demo with no script loader](http://showcase.ricca509.me/marionette-modal/examples/global)
+- [Demo with AMD](http://showcase.ricca509.me/marionette-modal/examples/AMD)
 
 ## Use it
 Wouldn'it be nice if you could just render your view as a modal without the view itself knowing that it is actually rendered as a modal?
