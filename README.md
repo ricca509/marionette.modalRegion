@@ -3,6 +3,8 @@ A Marionette region that gives your views a modal behavior.
 
 Wouldn'it be nice if you could just render your view as a modal without the view itself knowing that it is actually rendered as a modal?
 
+**The basic idea is to remove the modal logic from the view and add it to a 'modal region'**. This makes it possible to reuse the same view in a modal and everywhere else without having to change a line: it all depends on where you render that view.
+
 ## Demo
 Want to see it working?
 
