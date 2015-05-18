@@ -5,6 +5,9 @@
     "Riccardo Coppola <ricca509@gmail.com>"
   ],
   "description": "A modal region implementation",
+  "main": [
+    "marionette.modal.js"
+  ],
   "moduleType": [
     "amd",
     "globals"
