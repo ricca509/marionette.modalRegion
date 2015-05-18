@@ -24,7 +24,7 @@
     "tests"
   ],
   "dependencies": {
-    "marionette": "~2.4.0",
+    "marionette": "~2.0.0",
     "underscore": "~1.8.2",
     "requirejs": "~2.1.17",
     "jquery-modal": "https://github.com/kylefox/jquery-modal.git#master"
