@@ -21,7 +21,20 @@
             var options = this.getDefaultOptions(_.result(view, 'modal'));
 
             view.$el.modal(options);
-            view.$el.on($.modal.CLOSE, _.bind(this.onCloseDialog, this));
+
+            view.$el.on($.modal.CLOSE, _.bind(function () {
+                this.onCloseDialog();
+            }, this));
+
+            // Freeze darkened body
+            if ( options.freeze ) {
+                document.querySelector('body').classList.add('modal-freeze');
+            }
+        },
+
+        onEmpty: function () {
+            // Unfreeze body scrolling
+            document.querySelector('body').classList.remove('modal-freeze');
         },
 
         /**
