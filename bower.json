@@ -5,6 +5,9 @@
     "Riccardo Coppola <ricca509@gmail.com>"
   ],
   "description": "A modal region implementation",
+  "main": [
+    "marionette.modal.js"
+  ],
   "moduleType": [
     "amd",
     "globals"
@@ -24,10 +27,10 @@
     "tests"
   ],
   "dependencies": {
-    "marionette": "~2.0.0",
+    "marionette": "~2.2.1",
     "underscore": "~1.8.2",
     "requirejs": "~2.1.17",
-    "jquery-modal": "https://github.com/kylefox/jquery-modal.git#master"
+    "jquery-modal": "kylefox/jquery-modal#master"
   },
   "resolutions": {
     "underscore": "~1.8.2"
