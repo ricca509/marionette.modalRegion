@@ -8,14 +8,13 @@
         require('jquery.modal');
 
         module.exports = factory(Marionette, _, $);
-    } else {
-        // Browser globals (root is window)
-        factory(root.Marionette, root._);
+    } else {        
+        root.Marionette.Region.Modal = factory(root.Marionette, root._, root.$);
     }
-}(this, function (Marionette, _) {
+}(this, function (Marionette, _, $) {
     'use strict';
 
-    Marionette.Region.Modal = Marionette.Region.extend({
+    var ModalRegion = Marionette.Region.extend({
         onShow: function (view) {
             this.bindInputEvents(view);
             var options = this.getDefaultOptions(_.result(view, 'modal'));
@@ -61,4 +60,6 @@
             this.listenTo(view, 'dialog:close', _.bind(this.forceClose, this));
         }
     });
+
+    return ModalRegion;
 }));
