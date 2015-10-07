@@ -7,7 +7,8 @@
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev-commonjs": "beefy examples/CommonJs/src/init.js:dist/bundle.js --live --open"
   },
   "author": "",
   "license": "ISC",
@@ -16,5 +17,11 @@
     "grunt-contrib-connect": "^0.9.0",
     "grunt-contrib-jasmine": "^0.8.2",
     "grunt-umd": "^2.3.2"
+  },
+  "dependencies": {
+    "backbone.marionette": "^2.4.3",
+    "jquery": "^2.1.4",
+    "picomodal": "^2.2.0",
+    "underscore": "^1.8.3"
   }
 }

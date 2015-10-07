@@ -1,27 +1,33 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['marionette', 'underscore', 'jquery', 'jquery.modal'], factory);
+        define(['marionette', 'underscore', 'picoModal', 'jquery'], factory);
     } else if (typeof exports === 'object') {
-        var Marionette = require('marionette');
+        var Marionette = require('backbone.marionette');
         var _ = require('underscore');
         var $ = require('jquery');
-        require('jquery.modal');
+        var picoModal = require('picoModal');
 
-        module.exports = factory(Marionette, _, $);
+        module.exports = factory(Marionette, _, picoModal, $);
     } else {
         // Browser globals (root is window)
-        factory(root.Marionette, root._);
+        factory(root.Marionette, root._, root.picoModal);
     }
-}(this, function (Marionette, _) {
+}(this, function (Marionette, _, picoModal) {
     'use strict';
 
     Marionette.Region.Modal = Marionette.Region.extend({
         onShow: function (view) {
+
+            view.$el.css('display','none');
+
             this.bindInputEvents(view);
             var options = this.getDefaultOptions(_.result(view, 'modal'));
 
-            view.$el.modal(options);
-            view.$el.on($.modal.CLOSE, _.bind(this.onCloseDialog, this));
+            var modal = picoModal(_.extend({
+              content: view.$el.html()
+            }, options))
+            .afterClose(_.bind(this.onCloseDialog, this))
+            .show();
         },
 
         /**
@@ -43,7 +49,6 @@
          * Cleanup after dialog is closed
          */
         onCloseDialog: function () {
-            this.currentView.$el.off($.modal.CLOSE);
             this.empty();
         },
 
