@@ -1,15 +1,8 @@
-require.config({
-    paths: {
-        'backbone': '../../../bower_components/backbone/backbone',
-        'underscore': '../../../bower_components/underscore/underscore',
-        'jquery': '../../../bower_components/jquery/dist/jquery',
-        'picoModal': '../../../bower_components/picoModal/src/picoModal',
-        'backbone.marionette': '../../../bower_components/marionette/lib/backbone.marionette',
-        'marionette.modal': '../../../marionette.modal'
-    }
-});
+var App = require('./App'),
+    Marionette = require('backbone.marionette'),
+    _ = require('underscore');
 
-require(['app', 'backbone.marionette'], function (App, Marionette) {
+module.exports = (function () {
     'use strict';
 
     App.start();
@@ -56,4 +49,4 @@ require(['app', 'backbone.marionette'], function (App, Marionette) {
     menu.on('item:inline:close:click', emptyContent);
 
     App.menu.show(menu);
-});
+}());

@@ -1,9 +1,9 @@
-define(function (require) {
-    'use strict';
+var Marionette = require('backbone.marionette');
+// Enrich Marionette with the Modal Region
+require('../../../marionette.modal');
 
-    var Marionette = require('backbone.marionette');
-    // Enrich Marionette with the Modal Region
-    require('marionette.modal');
+module.exports = (function () {
+    'use strict';
 
     var App = new Marionette.Application();
 
@@ -14,4 +14,4 @@ define(function (require) {
     });
 
     return  App;
-});
+}());
