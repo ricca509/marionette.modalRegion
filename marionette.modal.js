@@ -1,6 +1,6 @@
 (function (root, factory) {
     if (typeof define === 'function' && define.amd) {
-        define(['marionette', 'underscore', 'picoModal', 'jquery'], factory);
+        define(['backbone.marionette', 'underscore', 'picoModal', 'jquery'], factory);
     } else if (typeof exports === 'object') {
         var Marionette = require('backbone.marionette');
         var _ = require('underscore');
@@ -23,7 +23,7 @@
             this.bindInputEvents(view);
             var options = this.getDefaultOptions(_.result(view, 'modal'));
 
-            var modal = picoModal(_.extend({
+            picoModal(_.extend({
               content: view.$el.html()
             }, options))
             .afterClose(_.bind(this.onCloseDialog, this))

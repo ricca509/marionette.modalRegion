@@ -4,12 +4,12 @@ require.config({
         'underscore': '../../../bower_components/underscore/underscore',
         'jquery': '../../../bower_components/jquery/dist/jquery',
         'picoModal': '../../../bower_components/picoModal/src/picoModal',
-        'marionette': '../../../bower_components/marionette/lib/backbone.marionette',
+        'backbone.marionette': '../../../bower_components/marionette/lib/backbone.marionette',
         'marionette.modal': '../../../marionette.modal'
     }
 });
 
-require(['app', 'marionette'], function (App, Marionette) {
+require(['app', 'backbone.marionette'], function (App, Marionette) {
     'use strict';
 
     App.start();

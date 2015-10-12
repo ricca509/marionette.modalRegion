@@ -1,7 +1,7 @@
 define(function (require) {
     'use strict';
 
-    var Marionette = require('marionette');
+    var Marionette = require('backbone.marionette');
     // Enrich Marionette with the Modal Region
     require('marionette.modal');
 
