@@ -1,8 +1,8 @@
 {
-  "name": "lmn.marionette.modal",
+  "name": "marionette.modal",
   "version": "1.0.0",
   "description": "A Modal region implementation",
-  "main": "lmn.marionette.modal.js",
+  "main": "marionette.modal.js",
   "directories": {
     "example": "example"
   },
